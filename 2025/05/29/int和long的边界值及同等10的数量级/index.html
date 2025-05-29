@@ -7,7 +7,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/OIP.jpg">
 <meta property="article:published_time" content="2025-05-29T10:51:43.000Z">
-<meta property="article:modified_time" content="2025-05-29T15:16:32.863Z">
+<meta property="article:modified_time" content="2025-05-29T15:19:35.503Z">
 <meta property="article:author" content="Augenstin">
 <meta property="article:tag" content="基础编程">
 <meta property="article:tag" content="cpp">
@@ -20,7 +20,7 @@
   "url": "http://example.com/2025/05/29/int%E5%92%8Clong%E7%9A%84%E8%BE%B9%E7%95%8C%E5%80%BC%E5%8F%8A%E5%90%8C%E7%AD%8910%E7%9A%84%E6%95%B0%E9%87%8F%E7%BA%A7/",
   "image": "http://example.com/img/OIP.jpg",
   "datePublished": "2025-05-29T10:51:43.000Z",
-  "dateModified": "2025-05-29T15:16:32.863Z",
+  "dateModified": "2025-05-29T15:19:35.503Z",
   "author": [
     {
       "@type": "Person",
@@ -161,21 +161,26 @@
   isHighlightShrink: false,
   isToc: true,
   pageType: 'post'
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Augenstin的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">int和long的边界值及同等10的数量级</span></a></span><div id="menus"></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">int和long的边界值及同等10的数量级</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-29T10:51:43.000Z" title="Created 2025-05-29 18:51:43">2025-05-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-29T15:16:32.863Z" title="Updated 2025-05-29 23:16:32">2025-05-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/cpp/">cpp</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">242</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>1mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="int类型"><a href="#int类型" class="headerlink" title="int类型"></a><code>int</code>类型</h1><p><code>int</code>类型一般是4字节，即32bit。</p>
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Augenstin的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">int和long的边界值及同等10的数量级</span></a></span><div id="menus"></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">int和long的边界值及同等10的数量级</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-29T10:51:43.000Z" title="Created 2025-05-29 18:51:43">2025-05-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-29T15:19:35.503Z" title="Updated 2025-05-29 23:19:35">2025-05-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/cpp/">cpp</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">250</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>1mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="int类型"><a href="#int类型" class="headerlink" title="int类型"></a><code>int</code>类型</h1><p><code>int</code>类型一般是4字节，即32bit。</p>
 <div class="table-container">
 <table>
 <thead>
 <tr>
-<th>2进制</th>
-<th>$2^{32}=4,294,967,296$</th>
-<th>$2^{31}=2,147,483,648$</th>
+<th>进制</th>
+<th>数量级</th>
+<th>数量级</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>2进制</td>
+<td>$2^{32}=4,294,967,296$</td>
+<td>$2^{31}=2,147,483,648$</td>
+</tr>
+<tr>
 <td>10进制</td>
-<td>$10^{9}=-1,000,000,000$</td>
-<td>$10^{9}=1,000,000,000$</td>
+<td>$10^{9}$</td>
+<td>$10^{9}$</td>
 </tr>
 </tbody>
 </table>
@@ -185,7 +190,30 @@
 <h2 id="unsigned-int"><a href="#unsigned-int" class="headerlink" title="unsigned int"></a><code>unsigned int</code></h2><p>范围是$0~2^{32}-1$，即$0$~$4,294,967,295$</p>
 <p>$0$~$10^9$都在<code>unsigned int</code>范围内，$10^{10}$超出<code>unsigned int</code>范围</p>
 <h1 id="long类型"><a href="#long类型" class="headerlink" title="long类型"></a><code>long</code>类型</h1><p><code>long</code>类型同<code>int</code>类型</p>
-<h1 id="long-long类型"><a href="#long-long类型" class="headerlink" title="long long类型"></a><code>long long</code>类型</h1><p><code>long long</code>类型一般是8字节，即64bit。<br>| 2进制 | $2^{64}=18,446,744,073,709,551,616$ | $2^{63}=9,223,372,036,854,775,808$ |<br>| —- | —- | —- |<br>| <strong>10进制</strong> | $10^{19}$ | $10^{18}$ |</p>
+<h1 id="long-long类型"><a href="#long-long类型" class="headerlink" title="long long类型"></a><code>long long</code>类型</h1><p><code>long long</code>类型一般是8字节，即64bit。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>进制</th>
+<th>数量级</th>
+<th>数量级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2进制</td>
+<td>$2^{64}=18,446,744,073,709,551,616$</td>
+<td>$2^{63}=9,223,372,036,854,775,808$</td>
+</tr>
+<tr>
+<td>10进制</td>
+<td>$10^{19}$</td>
+<td>$10^{18}$</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="long-long"><a href="#long-long" class="headerlink" title="long long"></a><code>long long</code></h2><p>范围是$-2^{64}~2^{63}-1$，即$-18,446,744,073,709,551,616$~$9,223,372,036,854,775,807$</p>
 <p>$-10^{19}$~$10^{18}$都在<code>long</code>范围内，$+10^{19}$超出<code>long long</code>范围</p>
 <h2 id="unsigned-long-long"><a href="#unsigned-long-long" class="headerlink" title="unsigned long long"></a><code>unsigned long long</code></h2><p>范围是$0~2^{64}-1$，即$0$~$9,223,372,036,854,775,807$</p>
