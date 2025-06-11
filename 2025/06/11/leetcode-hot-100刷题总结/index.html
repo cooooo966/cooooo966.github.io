@@ -1,0 +1,1018 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>leetcode hot 100刷题总结 | Augenstin的个人博客</title><meta name="author" content="Augenstin"><meta name="copyright" content="Augenstin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="提高算法能力 根据leetcode hot 100题单刷题 正在不断完善">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode hot 100刷题总结">
+<meta property="og:url" content="http://cooooo966.github.io/2025/06/11/leetcode-hot-100%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Augenstin的个人博客">
+<meta property="og:description" content="提高算法能力 根据leetcode hot 100题单刷题 正在不断完善">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://cooooo966.github.io/img/OIP.jpg">
+<meta property="article:published_time" content="2025-06-11T11:08:19.000Z">
+<meta property="article:modified_time" content="2025-06-11T11:08:19.087Z">
+<meta property="article:author" content="Augenstin">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="leetcode hot 100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cooooo966.github.io/img/OIP.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "leetcode hot 100刷题总结",
+  "url": "http://cooooo966.github.io/2025/06/11/leetcode-hot-100%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/",
+  "image": "http://cooooo966.github.io/img/OIP.jpg",
+  "datePublished": "2025-06-11T11:08:19.000Z",
+  "dateModified": "2025-06-11T11:08:19.087Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Augenstin",
+      "url": "http://cooooo966.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/book.png"><link rel="canonical" href="http://cooooo966.github.io/2025/06/11/leetcode-hot-100%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'leetcode hot 100刷题总结',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Augenstin的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">leetcode hot 100刷题总结</span></a></span><div id="menus"></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">leetcode hot 100刷题总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-06-11T11:08:19.000Z" title="Created 2025-06-11 19:08:19">2025-06-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-06-11T11:08:19.087Z" title="Updated 2025-06-11 19:08:19">2025-06-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">21.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>70mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><ul>
+<li><strong>1.两数之和</strong>：<ul>
+<li>哈希法。时间复杂度O(n)，空间复杂度O(n)</li>
+<li>有序数组，考虑双指针。无序数组，时间复杂度O(nlogn)，空间复杂度O(1)；有序数组，时间复杂度O(n)，时间复杂度O(1)</li>
+</ul>
+</li>
+<li><strong>49.字母异位词分组</strong>：<ul>
+<li>使用链表法处理哈希冲突，同一类字符串在同一个桶中</li>
+<li>时间复杂度O(nmlongm)，空间复杂度O(nm)</li>
+</ul>
+</li>
+<li><strong>128.最长连续序列</strong>：<ul>
+<li>将数组转化为哈希表，在哈希表中查找是否存在x</li>
+<li>重要优化：如果x-1在哈希表中，就不进入内层循环，从而达到时间复杂度O(n)<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h1></li>
+</ul>
+</li>
+<li><strong>283.移动零</strong>：<ul>
+<li>主要思路是使用i0和i维护一个全零的区间[i0,i)</li>
+<li>时间复杂度O(n)，空间复杂度O(1)</li>
+<li>灵神代码非常优雅，值得反复品阅</li>
+</ul>
+</li>
+<li><strong>11.盛水最多的容器</strong>：<ul>
+<li>相向双指针。每次移动值较小的指针</li>
+<li>时间复杂度O(n)，空间复杂度O(1)</li>
+</ul>
+</li>
+<li><strong>15.三数之和</strong><ul>
+<li>对数组排序，使用相向双指针。对i、j、k去重，i在内层循环外与i-1对比去重，j和k在放入结果后去重。两个剪枝优化：<ol>
+<li>当<code>nums[i]+nums[l-2]+nums[l-1]&lt;0</code>，说明该i值不能组合成&gt;0的三元组，<code>continue</code>；</li>
+<li>当<code>nums[i]+nums[i+1]+nums[i+2]&gt;0</code>，说明该i值和后面的值都大于0，无法组成和为0的三元组，可<code>break</code>跳出循环。</li>
+</ol>
+</li>
+<li>时间复杂度为O(n^2)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>42.接雨水</strong>：<ul>
+<li>前后缀分解，需要两个数组存储每个i前后的最大高度。也是动态规划方法。时间复杂度O(n)，空间复杂度O(n)</li>
+<li>相向双指针，通过双指针局部了解i处一侧固定最大值，另一侧局部最大值，从而计算i处接水量。时间复杂度为O(n)，空间复杂度优化为O(1)<h1 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h1></li>
+</ul>
+</li>
+<li><strong>3.无重复字符的最长子串</strong><ul>
+<li>不定长滑动窗口</li>
+<li>优化思想：不确定新加入导致重复的字符是与原无重复字符子串的哪一个重复，于是先从左一个个剔除，再看右边界能否扩展。查找是否有重复字符使用了哈希表。</li>
+<li>时间复杂度为O(n)，空间复杂度为O(n)</li>
+</ul>
+</li>
+<li><strong>438.找到字符串中所有异位词</strong><ul>
+<li>定长滑动窗口。使用<code>array</code>记录每个字符出现次数，对定长滑动窗口与目标字符串进行对比，从而找到所有异位词。时间复杂度为O(|$\Sigma$|m+n)，其中m是s的长度，n是p的长度。空间复杂度为O(|$\Sigma$|)</li>
+<li>不定长滑动窗口。巧妙但有些难以理解。控制不定长窗口维护一个出现字符次数小于等于目标字符串的子字符串，由于是小于等于，因此当窗口长度==目标字符串长度时，窗口中的子字符串必为目标字符串的异位词。时间复杂度为O(m+n)，空间复杂度为O(|$\Sigma$|)<h1 id="子串"><a href="#子串" class="headerlink" title="子串"></a>子串</h1></li>
+</ul>
+</li>
+<li><strong>560.和为k的子数组</strong><ul>
+<li>数组元素不是都为正整数，因此不能用滑动窗口。<strong>滑动窗口需要满足单调性，当右端点元素进入窗口时，窗口元素和是不能减少的。本题 nums 包含负数，当负数进入窗口时，窗口左端点反而要向左移动，导致算法复杂度不是线性的。</strong></li>
+<li>前缀和，在要求<strong>连续、存在负数元素</strong>的情况下考虑。这里因为只需要返回子数组个数，因此哈希表中key为前缀和，value为出现次数。注意：<ol>
+<li>初始化要添加m[0]=1;</li>
+<li>先更新ans，再将当前前缀和加入哈希表，避免干扰结果。</li>
+</ol>
+</li>
+<li>时间复杂度为O(n)，空间复杂度为O(n)</li>
+</ul>
+</li>
+<li><strong>239.滑动窗口最大值</strong><ul>
+<li>名为滑动窗口，实则使用<strong>单调队列</strong>。<strong>满足单调性的双端队列一般称作「单调队列」。</strong>在本题的单调队列中，位于j前的元素i，在数组中也位于j前，且值比j大。</li>
+<li>时间复杂度为O(n),每个数只入队出队各一次。空间复杂度为O(k)，队列中维护至多k个数。</li>
+</ul>
+</li>
+<li><strong>76.最小覆盖子串</strong><ul>
+<li>不定长滑动窗口。本题的几个难点（坑点）：<ol>
+<li>字符串中既有大写字母也有小写字母，不能使用26 size哈希表，需要是128 size</li>
+<li>判断是否涵盖：使用哈希表记录子串中各个字符出现的次数，与目标字符串对比</li>
+<li>初始化答案<code>int ans_left=-1,ans_right=s.size();</code>，当<code>right-left&lt;ans_right-ans_left</code>表示出现了更短的子串，更新答案，最后通过判断<code>ans_left&lt;0?"":s.substr(ans_left,ans_right-ans_left+1);</code>返回答案</li>
+</ol>
+</li>
+<li>时间复杂度为O(|$\Sigma$|m+n)，可以用less维护当前子串中出现次数比目标字符串少的字符个数，可以将时间复杂度降到O(m+n)。空间复杂度为O(|$\Sigma$|)<h1 id="普通数组"><a href="#普通数组" class="headerlink" title="普通数组"></a>普通数组</h1></li>
+</ul>
+</li>
+<li><strong>53.最大子数组和</strong><ul>
+<li>前缀和。维护当前前缀和、最小前缀和，并相减不断更新答案。时间复杂度为O(n)，空间复杂度为O(1)</li>
+<li>动态规划。可以理解为：当目前求和为负数时，就置0，因为负数加后面的数都只会使和更小。<ul>
+<li>dp初始化：dp[0]=nums[0]</li>
+<li>dp推导共识：dp[i]=max(dp[i-1],0)+nums[i]</li>
+<li>时间复杂度为O(n)，由于dp[i]只和dp[i-1]有关，空间复杂度可以优化为O(1)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>56.合并区间</strong><ul>
+<li>技巧题。先将数组内的区间按照左端点排序，初始化后，将后面左端点小于当前右端点的区间合并，这里注意，后面的左端点小于等于当前右端点的区间，其右端点不一定大于当前右端点，因此更新时取两者的最大值。</li>
+<li>时间复杂度为O(nlogn)，主要是排序。空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>189.轮转数组</strong><ul>
+<li>多次翻转。先整体翻转，再将前k个和后n-k个分别翻转</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>238.除自身以外数组的乘积</strong><ul>
+<li>前后缀分解。维护当前i之前的乘积pre[i]和当前i之后的乘积suf[i]，结果ans[i]=pre[i]*suf[i]。时间复杂度为O(n)，空间复杂度为O(n)</li>
+<li>空间复杂度优化，先计算后缀乘积suf[i]，再在计算前缀乘积的过程中，原地修改suf[i]为ans[i]的值。时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>41.缺失的第一个正数</strong><ul>
+<li>技巧题。大小为n的数组能包含的正整数最多是n个，最大的缺失的第一个正数为n+1（数组元素为1，2，…，n的情况）。可以将数组内1-n范围的正整数交换到对应下标（正整数-1）位置，最后从左到右遍历，当nums[i]!=i+1，说明数组缺失i+1，返回i+1；如果遍历后每个下标都有正确的正整数，返回n+1</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1></li>
+</ul>
+</li>
+<li><strong>73.矩阵置零</strong><ul>
+<li>方法一：使用标记数组。大小为m的数组row维护每一行是否要置零，大小为n的数组col维护每一列是否置零。这个方法需要遍历两次矩阵，第一次更新两个标记数组，第二次将对应行与列置零。时间复杂度为O(mn)，空间复杂度为O(m+n)</li>
+<li>方法二：使用两个标记变量。使用矩阵的第一行和第一列当作方法一中的标记数组，同时使用两个标记变量记录第一行和第一列是否存在0。首先遍历第一行和第一列更新两个标记变量；再遍历剩下的行与列，更新作为标记数组的第一行与第一列；再根据第一行和第一列的标记结果，将剩下的行与列相应置零；最后根据两个标记遍历处理第一行与第一列是否置零。这个方法时间复杂度仍然为O(mn)，但是空间复杂度优化为O(1)</li>
+<li>方法三：使用一个标记变量。这是官方题解的方法三，时间复杂度为O(mn)，空间复杂度为O(1)，与方法二差不多但是更难理解。个人认为在效率和可读性中需要达到平衡，更推荐方法二。</li>
+</ul>
+</li>
+<li><strong>54.螺旋矩阵</strong><ul>
+<li>一层一层地右下左上遍历，每层右遍历完，<code>t++</code>；下遍历完，<code>r--</code>；左遍历完，<code>b--</code>；上遍历完，<code>l++</code>。需要注意在左上遍历之前，还需要判断一下是否<code>l &lt;= r &amp;&amp; t &lt;= b</code></li>
+<li>灵神的代码更简洁，而且不需要特殊判断是否<code>l &lt;= r &amp;&amp; t &lt;= b</code>。每次每个方位精确控制走固定步数，当res中的元素个数为m*n个结束循环<br>-时间复杂度为O(mn)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>48.旋转图像</strong><ul>
+<li>与前面189.轮转数组类似。顺时针旋转90度，可以分解为：1.矩阵转置；2.行翻转</li>
+<li>同理，顺时针旋转180度可分解为：先列翻转，再行翻转。逆时针90度可分解为：方法一：先转置，再列翻转；方法二：先行翻转，再转置</li>
+<li>时间复杂度为O($n^2$)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>240.搜索二维矩阵II</strong><ul>
+<li>只能一行或一列的排除。可以对每行进行二分查找，时间复杂度为O(mlogn)，空间复杂度为O(1)</li>
+<li>Z字形查找。对右上角的数进行排查，大于该数排除最上面一行，小于该数排除最右边一列，逐渐缩小范围，知道找到target或排除所有元素。时间复杂度为O(m+n)，空间复杂度为O(1)<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1></li>
+</ul>
+</li>
+<li><strong>160.相交链表</strong><ul>
+<li>双指针。解法非常有技巧。将链表末尾视为一个空节点，链表A可分为非相交部分x+相交部分z，链表b可分为非相交部分y+相交部分z（z可以只有一个空节点，即两个链表实际并不相交）。由于(x+z)+y=(y+z)+x，即当A指针走完了链表A，从B的头节点继续走；B指针走完了链表B，从B的头节点继续走，A、B指针可在相交点相遇（两个链表不相交的情况是在末尾空节点相遇）。相遇点就是要找到的相交点。</li>
+<li>时间复杂度为O(m+n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>206.反转链表</strong><ul>
+<li>简单题，从前往后遍历链表，遍历过程中反转链表</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>234.回文链表</strong><ul>
+<li>快慢指针。运用了前两题的知识。解题思路为：<ol>
+<li>将原来的链表分为两部分：当链表节点个数为奇数，后面部分的头节点为中点节点；当链表节点个数为偶数，后面部分头节点为中点右边节点；</li>
+<li>反转后面链表部分；</li>
+<li>现在原链表变为两个相交链表，相交部分是一个节点，即原后面部分的原头节点（中点节点或中点右边节点）。从两个链表头部同时遍历直到后半部分链表到链表尾，一一对比节点值是否相等，不相等说明不是回文链表，结果为false并跳出循环；否则为回文链表，结果为true；</li>
+<li>复原后面部分链表；</li>
+<li>返回结果。</li>
+</ol>
+</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>141.环形链表</strong><ul>
+<li>快慢指针。快指针走两步，慢指针走一步，如果两个指针相遇，表示链表必然存在环，否则没有环</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>142.环形链表II</strong><ul>
+<li>快慢指针。使用上一题的方法确定是否有环。当快慢指针相遇时，假设链表头节点到环入口需走x步，环入口到两指针相遇点需走y步，相遇点到环入口（即环剩余部分）为z步，则快指针走了x+y+z+y步，慢指针走了x+y步。可知x+y+z+y=2(x+y)，即z=x,那么当快指针从相遇点开始走，每次走一步，慢指针从头节点开始走，每次走一步，两者刚好可以在环入口处相遇。</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>21.合并两个有序列表</strong><ul>
+<li>和<font color="3fb1fd">88.合并两个有序数组</font>题目类似</li>
+<li>递归。时间复杂度为O(m+n)，空间复杂度为O(m+n)，因为递归产生的栈空间。<br><img src="/picture/friend_404.gif" data-original="image.png" alt="递归方式"></li>
+<li>迭代。使用虚拟头节点避免单独处理头节点，当<code>list1-&gt;val &lt;= list2-&gt;val</code>时，<code>cur-&gt;next = list1;</code>，否则<code>cur-&gt;next = list2;</code>。其中一个链表遍历完后，将另一个链表的剩余部分加在合并链表后。时间复杂度为O(m+n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>2.两数相加</strong><ul>
+<li>递归。终止条件为：<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (l1 == <span class="literal">nullptr</span> &amp;&amp; l2 == <span class="literal">nullptr</span> &amp;&amp; !t) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+当l1不为<code>nullptr</code>，进位t加上l1-&gt;val；当l2不为<code>nullptr</code>，进位t加上l2-&gt;val。返回<code>return new ListNode(t % 10, addTwoNumbers(l1, l2, t / 10));</code>。时间复杂度为O(max($n_1$,$n_2$))，空间复杂度为O(n)，栈空间大小</li>
+<li>迭代。为避免单独处理头节点，创建一个dummy虚拟头节点。该题递归和迭代都不是原地修改，会不断创建新节点加入相加链表。while循环条件为<code>l1 || l2</code>，最后再处理一下最高位的进位（也可以是<code>l1 || l2 || t</code>，这样不用最后单独处理最高位进位）。时间复杂度为O(max($n_1$,$n_2$))，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>19.删除链表的倒数第N个节点</strong><ul>
+<li>前后指针/快慢指针。快指针先走n步，之后快慢指针同步走，当<code>fast-&gt;next==nullptr</code>时，慢指针指向的刚好是要删除的节点的前一个节点。为了避免单独处理头节点，创建一个虚拟头节点dummy。</li>
+<li>时间复杂度为O(m)，m指链表长度，以避免与题目中的n产生歧义，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>24.两两交换链表中的节点</strong><ul>
+<li>迭代+哨兵节点避免单独处理头节点。本题也可以使用递归，但是迭代既容易理解空间复杂度也少，因此不单独写递归方法。</li>
+<li>迭代时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>25.K个一组翻转链表</strong><ul>
+<li>基于前面<font color="3fb1fd">206.反转链表</font>和<font color="3fb1fd">24.两两交换链表中的节点</font>的知识点</li>
+<li>前后指针+哨兵节点。首先使用前后指针确定要翻转的链表范围h和t，h表示范围的前一个节点，t表示范围中的最后节点，即左开右闭。遍历确定范围过程中如果出现空节点，表示当前剩余链表节点不够k个，不需要翻转，直接返回<code>dummy-&gt;next</code>。确定好范围后，从当前组的头到尾遍历翻转，最后将子链表与主链表连接上，注意这里还需要更改t，因为此时t已经被翻转到范围中的第一个节点了，需要将t更改为翻转后的范围中的最后节点。</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>138.随机链表的复制</strong><ul>
+<li>递归+哈希表。将一个函数视为对一个链表节点的复制，复制当前索引到的链表节点，这样不是完全按照遍历顺序对链表节点进行复制，使用哈希表记录当前复制了的节点和原节点与复制节点的对应关系。思维很巧妙，时间复杂度为O(n)，空间复杂度为O(1)</li>
+<li>迭代。将复制的链表节点直接插入在原链表中原链表节点之后，由于复制时random可能还没有创建，因此第一次遍历只创建节点、复制值并将节点插入到链表原节点之后。这样复制节点的random就可以通过：<code>cur-&gt;next-&gt;random = cur-&gt;random ? cur-&gt;random-&gt;next : nullptr;</code>得到（注意random为nullptr的情况）。第二次遍历将复制节点的random复制完后，第三次遍历将复制节点取出，形成返回结果的链表，并将原链表复原。时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>148.排序链表</strong><ul>
+<li>递归+归并排序。自顶向下对链表不断二分（使用前后指针找到链表中点，并将链表根据中点分为两个链表），当分组为1或空时，视为已经有序，再对有序链表不断合并（<font color="3fb1fd">21.合并两个有序链表</font>），最后得到完整的排序链表。时间复杂度为O(nlogn)，空间复杂度为O(logn)，栈空间的大小</li>
+<li>迭代。迭代自下而上对链表分组排序。首先步长k为1，根据步长划分链表（链表需要互相断开），并两两合并为有序链表（<font color="3fb1fd">21.合并两个有序链表</font>），直到遍历完链表。将k*2，循环上面的过程，直到k&gt;链表长度，表示当前链表已经排序完成。时间复杂度为O(nlogn)，空间复杂度为O(1)</li>
+<li>该题中链表的断开、合并、子链表与原链表的合并细节需要注意</li>
+</ul>
+</li>
+<li><strong>23.合并K个升序链表</strong><ul>
+<li>基于<font color="3fb1fd">21.合并两个有序链表</font>的知识</li>
+<li>迭代。自底向上两两合并有序链表。比如，合并lists[0]和lists[1]，合并后的结果放在lists[0]中，一轮循环后，lists[0],lists[2],…存放合并好的有序链表，再增加步长为2，继续合并，最后合并结果存放在lists[0]中，返回lists[0]</li>
+<li>时间复杂度为O(nlogk)，其中k为链表个数，n为所有链表的节点数之和，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>146.LRU缓存</strong><ul>
+<li><strong>LRU</strong>：操作系统<strong>页面调度</strong>算法之一。<strong>Least Recently Used，最近最少使用算法。</strong> 当缺页且内存已满时，将上次使用时间最远的页替换为新页。</li>
+<li>哈希表+双向链表+哨兵节点。<ul>
+<li>哨兵节点简化头节点处理。</li>
+<li>使用双向链表，不用记录页上次使用的时间，新页依次插入链表头，当需要获取的页在链表中，需要将该页位置更换到链表头部，即链表顺序表示调用页的顺序。当链表大小等于容量，新插入页需要将最近最少使用的页逐出链表，则最近最少使用的页就是链表尾节点的页，由于是双向链表，寻找链表尾节点是O(1)复杂度，插入和删除节点也是O(1)时间复杂度。</li>
+<li>使用哈希表将通过key查找节点这一步时间复杂度减至O(1)，因此get()和put()都能达到O(1)复杂度。</li>
+</ul>
+</li>
+<li>时间复杂度：LRUCache的函数时间复杂度都为O(1)，空间复杂度为O(min(p,capacity))，p为put操作次数，空间复杂度来源于哈希表存储<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1></li>
+</ul>
+</li>
+<li><strong>94.二叉树的中序遍历</strong><ul>
+<li>递归。左-&gt;中-&gt;右的顺序遍历。时间复杂度为O(n)，空间复杂度为O(n)，栈空间的消耗</li>
+<li>迭代。手动创建栈模拟递归的过程。时间复杂度为O(n)，空间复杂度为O(n)，栈数据结构的存储空间</li>
+<li>Morris中序遍历。利用子树根节点的前驱节点右孩子为空的性质，利用前驱节点闲置的右孩子空间，指向子树根节点。<ul>
+<li>当cur有左孩子：<ul>
+<li>找到前驱节点：<ol>
+<li>前驱节点无右孩子：将前驱节点的右孩子置为cur，cur=cur-&gt;left</li>
+<li>前驱节点有右孩子：将前驱节点的右孩子复原为nullptr，输出cur，此时cur的左子树遍历完毕，cur=cur-&gt;right</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>当cur无左孩子：<br>  输出cur，cur=cur-&gt;right遍历cur的右子树或者到达其后驱节点（这里不需要复原，因为复原与更新的位置应该是对应的，即前面情况的1和2.第一遍是更新，第二遍是复原）</li>
+<li>注意复原前驱节点的右节点！！！！</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>104.二叉树的最大深度</strong><ul>
+<li>递归。终止条件是<code>root==nullptr</code>，返回0；否则返回<code>return max(maxDepth(root-&gt;left),maxDepth(root-&gt;right))+1;</code>，这里+1是加上了当前节点</li>
+<li>时间复杂度为O(n)，遍历树中所有节点，空间复杂度为O(height)，即树的高度</li>
+</ul>
+</li>
+<li><strong>226.翻转二叉树</strong><ul>
+<li>递归。有两种写法：<ul>
+<li>写法一：先调用递归翻转左右孩子，分别获取到翻转后的左右子树，将左右子树调换</li>
+<li>写法二：先调换左右子树，再分别递归翻转左右子树</li>
+</ul>
+</li>
+<li>时间复杂度为O(n)，空间复杂度为O(height)，当最坏情况，二叉树退化为一条链，时间复杂度为O(n)</li>
+</ul>
+</li>
+<li><strong>101.对称二叉树</strong><ul>
+<li>理解的思路在<font color="3fb1fd">226.翻转二叉树</font>基础上，但是解法不太相关。使用两个指针同步镜像移动，不断递归比较两个指针的值是否相等。</li>
+<li>时间复杂度为O(n)，空间复杂度为O(n)</li>
+</ul>
+</li>
+<li><strong>543.二叉树的直径</strong><ul>
+<li>基于<font color="3fb1fd">104.二叉树的最大深度</font>的解法。易错点在于，二叉树直径不一定会经过根节点，因此不能直接算根节点左右子树的最大深度。</li>
+<li>两个思路:<ul>
+<li>计算子树深度：从<font color="3fb1fd">104.二叉树的最大深度</font>的解法顺延，递归得到每个节点的左右子树的最大深度，分别为L和R，则基于当前节点的直径为L+R-1.</li>
+<li>计算子树中最大链长（路径长度）：此时当<code>root=nullptr</code>时，链长返回1，则叶节点的链长为0，非常合理。dfs返回该节点的最大链长，则左子树最大链长L为<code>dfs(root-&gt;left) + 1</code>,右子树最大链长R为<code>dfs(root-&gt;right) + 1</code>，则基于当前节点的直径为L+R.<blockquote>
+<p>链：从子树中的叶子节点到当前节点的路径。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>时间复杂度为O(n)，空间复杂度为O(height)，最坏情况（二叉树退化为一条链）下位O(n)</li>
+</ul>
+</li>
+<li><strong>102.二叉树的层序遍历</strong><ul>
+<li>使用广度优先算法+队列迭代实现。先将每一层的节点push进队列，在遍历该层时不断将左右孩子push进队列，实现层序遍历。</li>
+<li>时间复杂度为O(n)，空间复杂度为O(n)</li>
+</ul>
+</li>
+<li><strong>108.将有序数组转换为二叉搜索树</strong><ul>
+<li>注意题目中的数组是<strong>有序数组，元素升序排列</strong>。因此可以直接通过递归构造二叉搜索树，不断二分分解问题，这里奇数长度数组必定中间元素是根节点，偶数长度数组选择中间左侧元素为根节点。</li>
+<li>时间复杂度为O(n)，对数组的n个元素每个都构造一个树节点，空间复杂度为O(logn)，是栈空间的开销</li>
+</ul>
+</li>
+<li><strong>98.验证二叉搜索树</strong><ul>
+<li>方法一：使用dfs递归（前序遍历）。在递归的过程中传递一个区间（双端开区间），检查当前节点的值是否在这个区间中。时间复杂度为O(n)，空间复杂度为O(height)，最坏情况下是O(n)</li>
+<li>方法二：使用中序遍历。二叉搜索树用中序遍历就是一个升序数组，因此在中序遍历的过程中检查当前节点的值是否大于前一个节点的值，就可以验证是否是二叉搜索树。时间复杂度为O(n)，空间复杂度为O(n)</li>
+<li>注意用例中存在int类型的边界值，因此区间使用long long类型，边界值使用LONG_MIN和LONG_MAX，而不是INT_MIN和INT_MAX</li>
+</ul>
+</li>
+<li><strong>230.二叉搜索树中第k小的元素</strong><ul>
+<li>使用中序遍历迭代方法，遍历到第k个数输出结果。时间复杂度为O(H+k)，H为二叉搜索树的高度，空间复杂度为O(H)</li>
+<li>如果题目改成<strong>二叉搜索树中第k大的元素</strong>，可以使用递归方法，从中序遍历的左-中-右变为右-中-左，遍历到第k个数输出结果</li>
+</ul>
+</li>
+<li><strong>199.二叉树的右视图</strong><ul>
+<li>使用广度优先搜索（层序遍历）。在层序遍历的基础上，将每一层的最后一个元素加入结果数组中即可。</li>
+<li>时间复杂度为O(n)，空间复杂度为O(n)</li>
+<li>注意考虑空二叉树的边界情况</li>
+</ul>
+</li>
+<li><strong>114.二叉树展开为链表</strong><ul>
+<li>方法一：使用前序遍历。先前序遍历记录顺序，再按照顺序将每一个节点的左孩子置空，右孩子变为下一个节点。时间复杂度为O(n)，空间复杂度为O(n)，因为需要记录n个节点的顺序</li>
+<li>方法二：使用<font color="3fb1fd">94.二叉树的中序遍历</font>中方法<strong>Morris中序遍历</strong>使用到的前驱节点。与之前不同的是，这里的前驱节点不再指向当前节点（因为不是中序遍历，而是前序遍历），而是指向当前节点的右孩子。时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>105.从前序与中序遍历序列构造二叉树</strong><ul>
+<li>遍历构造唯一二叉树：<ul>
+<li>单独中序遍历无法构造唯一二叉树。前序遍历与后续遍历无法构造唯一二叉树。</li>
+<li>前序遍历与中序遍历可以构造唯一二叉树</li>
+<li>中序遍历与后序遍历可以构造唯一二叉树</li>
+<li>层次遍历与中序遍历可以构造唯一二叉树</li>
+</ul>
+</li>
+<li>方法一：递归分解。前序遍历序列的第一个元素为根，根据根可以将中序遍历序列划分为左右子树，不断递归分解，自底向上构造出二叉树。<ul>
+<li>时间复杂度为O($n^2$),遍历二叉树节点为O(n),遍历构造过程中在中序序列中搜索根节点索引需要O(n),复制vector左右子树的前序和中序数组也是O(n)复杂度，因此总时间复杂度为O($n^2$)</li>
+<li>空间复杂度为O($n^2$),栈空间在最坏情况（二叉树退化为一条链）为O(n),每层栈空间中还有复制的vector左右子树的前序和中序数组，为O(n)，因此总空间复杂度为O(n)</li>
+</ul>
+</li>
+<li>方法二：根据方法一中的遍历构造过程中在中序序列中搜索根节点索引需要O(n)的时间复杂度，可以使用哈希表优化，用空间换时间，将搜索时间降为O(1)复杂度。也可以避免复制vector左右子树的前序和中序数组的O(n)复杂度，传递左右子树的前序和中序数组的左开右闭区间，只需要O(1)复杂度。<ul>
+<li>时间复杂度为O(n),空间复杂度为O(n),为哈希表的O(n)+栈空间最坏情况的O(n)</li>
+<li>但是这个方法边界条件容易出错，面试不建议写</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>437.路径总和III</strong><ul>
+<li>使用前缀和+dfs。在dfs的基础上回溯，先将当前节点的值加入<code>sum</code>（这里<code>sum</code>需要是<code>long long</code>类型的，因为测试用例有$10^{10}$，超过了<code>int</code>类型范围），再看哈希表中有无满足题目的前缀值，再将当前<code>m[sum]++</code>，需要计数避免多个相同前缀和只计算了一次。再dfs左右子树，遍历完回溯，<code>sum</code>减当前节点值，<code>m[sum]--</code>。</li>
+<li>时间复杂度为O(n)，空间复杂度为O(n)</li>
+</ul>
+</li>
+<li><strong>236.二叉树的最近公共祖先</strong><ul>
+<li>二叉树的最近公共祖先有两种情况：<ul>
+<li>最近公共祖先的左右子树分别存在p/q</li>
+<li>最近公共祖先本身就是p/q，子树中存在q/p</li>
+</ul>
+</li>
+<li>方法一：dfs返回bool值。令$f_{xson}$表示子树中存在p/q。<ul>
+<li>找到最近公共祖先并更新结果的条件是：$f<em>{lson}$ &amp;&amp; $f</em>{rson}$ || (root==p || root==q) &amp;&amp; ($f<em>{lson}$ || $f</em>{lson}$)<ul>
+<li>$f<em>{lson}$ &amp;&amp; $f</em>{rson}$：最近公共祖先的左右子树分别存在p/q</li>
+<li>(root==p || root==q) &amp;&amp; ($f<em>{lson}$ || $f</em>{lson}$)：最近公共祖先本身就是p/q，子树中存在q/p</li>
+<li>这样找到的必然是最近公共祖先。因为非最近公共祖先情况二必然不满足，情况一也只会满足一个子树，无法更新结果</li>
+</ul>
+</li>
+<li>返回：$f<em>{lson}$ || $f</em>{lson}$ || root==p || root==q</li>
+</ul>
+</li>
+<li>方法二：dfs返回最近公共祖先。<ul>
+<li>终止条件：root == nullptr || root == p || root == q，返回root。即返回值不是空就是p/q</li>
+<li>dfs遍历左右子树，得到返回值left和right</li>
+<li>当left &amp;&amp; right，说明左右子树各有p/q，当前节点为最近公共祖先，返回root</li>
+<li>排除上面情况后，dfs返回值是left ? left : right。自底向上，当其中有一个值为q/p时，若p/q在其他子树中，则必然能进入上面的left &amp;&amp; right条件，之后返回值left ? left : right就是在最近公共祖先的root和nullptr中返回最近公共祖先的root，因此可以得到结果；若p/q在q/p的子树中，那么返回值left ? left : right就一直是nullptr和p/q中返回最近公共祖先p/q，也可以得到结果。</li>
+</ul>
+</li>
+<li>两个方法时间复杂度都为O(n)，空间复杂度都为O(n)</li>
+</ul>
+</li>
+<li><strong>124.二叉树中的最大路径和</strong><ul>
+<li>树形DP。前面<font color="3fb1fd">543.二叉树的直径</font>题目的扩展。使用dfs，不断更新最大路径和，返回值为当前节点能给出的链上最大和。注意如果为负数，需要和0取max。</li>
+<li>时间复杂度为O(n)，空间复杂度为O(height)，最坏情况为O(n)<h1 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h1></li>
+</ul>
+</li>
+<li><strong>200.岛屿数量</strong><ul>
+<li>BFS迭代方法。可以使用标志二维数组维护已经走过的点位，不断BFS，一次BFS结束ans++。</li>
+<li>本题可以不使用标志数组，而是将走过的点位都置’0’.</li>
+<li>时间复杂度为O(MN)，空间复杂度优化前为O(MN)，优化后为O(min(M,N))</li>
+</ul>
+</li>
+<li><strong>994.腐烂的橘子</strong><ul>
+<li>多源BFS。在BFS的基础上增加多源就行，修改不大。需要注意的是实时记录当前的新鲜橘子数量cnt，bfs循环的条件为<code>cnt &amp;&amp; !que.empty()</code>，避免已经腐烂完所有橘子，但是最后一个橘子还在que中，导致多一层无效循环，ans比预期答案多1的情况.</li>
+<li>时间复杂度为O(MN)，遍历二维数组。空间复杂度为O(MN)，最坏情况下所有元素都是腐烂的橘子，多源BFS的源是整个grid数组</li>
+</ul>
+</li>
+<li><strong>207.课程表</strong><ul>
+<li>DFS+三色标记法。三色标记法指用[未搜索]、[搜索中]、[已搜索]三种状态标记节点，因此需要维护一个状态标记数组<code>visited</code>。选择一个[未搜索]的节点作为起始节点u进行dfs，进入dfs更改状态为[搜索中]，当有向边相连的节点v的状态为[未搜索]时，dfs(v)；当有向边相连的节点v的状态为[搜索中]时，说明找到了环，更新ans为false。回溯到自身节点时，更改状态为[已搜索]。一轮dfs完成后，继续选择一个[未搜索]的节点作为起始节点u进行dfs，以此类推。</li>
+<li>时间复杂度为O(E+V)，其中E为边数，V为节点数。首先遍历前后限制关系构造邻接表需要O(E)，之后dfs会遍历每个节点的边，为O(E+V)，因此总时间复杂度为O(E+V)。空间复杂度也为O(E+V)，邻接表为O(E)，三色标记状态数组visited为O(V)，因此总空间复杂度为O(E+V)</li>
+</ul>
+</li>
+<li><strong>208.实现Trie（前缀树）</strong><ul>
+<li><code>Trie</code>类的属性：<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;Trie*&gt; children;  <span class="comment">//本题插入单词仅由小写字母组成，因此是26叉树</span></span><br><span class="line"><span class="type">bool</span> isEnd;    <span class="comment">//表示是否以该字母结束</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li>初始化：<code>Trie() : children(26), isEnd(false) {}</code></li>
+<li>插入：遍历<code>word</code>的字符，不断访问对应的<code>children</code>，当为空时创建节点，直到到达<code>word</code>末尾，将<code>isEnd</code>置为<code>true</code>。</li>
+<li>搜索单词和搜索前缀。搜索单词就是在搜索前缀的基础上，检查遍历到<code>word</code>末尾的当前节点的<code>isEnd</code>是否为true。</li>
+<li>时间复杂度：初始化为O(1)，插入为O(n)，n为输入单词的长度，搜索为O(n)。空间复杂度为O(|T||$\Sigma$|)，|T|表示插入的所有单词长度之和，|$\Sigma$|表示字符集的大小，本题为26<h1 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h1></li>
+</ul>
+</li>
+<li><strong>46.全排列</strong><ul>
+<li>回溯。维护标记数组记录元素是否被访问。使用数组记录定长的路径，回溯时只需要复原标记数组，不需要复原路径，因为下次可以直接覆盖。</li>
+<li>时间复杂度为$O(n<em>n!)$，调用回溯的次数为O(n!)，叶节点有O(n!)个（即全排列的个数），每个叶节点要把路径path复制到res中，复制需要O(n)，因此总时间复杂度为$O(n</em>n!)$。空间复杂度为O(n),标记数组和路径数组的大小</li>
+</ul>
+</li>
+<li><strong>78.子集</strong><ul>
+<li>方法一：回溯。回溯输入为当前元素下标<code>i</code>，终止条件为<code>i==n</code>。在每一个下标<code>i</code>的回溯函数中，要处理两种情况：<ol>
+<li>不将下标i的节点加入子集。直接<code>dfs(i+1)</code></li>
+<li>将下标i的节点加入子集。需要将下标i的元素加入子集并在回溯后复原</li>
+</ol>
+</li>
+<li>方法二：二进制。求子集其实就是看每一个元素是否要加入子集，每个元素有加入或不加入两种情况，可以用1和0表示，即每一个子集可以表示为长度为n的01串。$0\sim2^n-1$刚好可以表示所有子集中元素是否存在的情况。因此先遍历$0\sim2^n-1$，在遍历过程中，根据当前的值对n个位进行位运算，看第i个元素是否加入子集。遍历完得到所有子集。</li>
+<li>时间复杂度都为$O(n*2^n)$，空间复杂度都为O(n)</li>
+</ul>
+</li>
+<li><p><strong>17.电话号码的字母组合</strong></p>
+<ul>
+<li><p>回溯。首先建立一个s<code>tring</code>数组，记录每个数字对应的字母序列。从输入第0位开始dfs，遍历每位对应的字母序列，不断加入<code>path</code>，<code>dfs(i+1)</code>位，回溯复原<code>path</code>。终止条件为<code>i==n</code></p>
+<blockquote>
+<p>PS。像这种定长的路径，也可以输入直接覆盖，不用输出。</p>
+</blockquote>
+</li>
+<li><p>时间复杂度为$O(n4^n)$，最坏情况每位数字对应4个字母，n是每次将<code>path</code>复制到结果数组中的开销。空间复杂度为O(n)，即记录每次<code>path</code>的开销</p>
+</li>
+</ul>
+</li>
+<li><strong>39.组合总和</strong><ul>
+<li>类似前面<font color="3fb1fd">78.子集</font>题。使用回溯，不同在于这里允许不限次数使用同一个数，因此回溯的内容稍有不同。对输入中的每一个数，都有选或不选两种情况，如果选第i个数，需要将数加入路径，更新sum，并且<strong><code>dfs(i)</code></strong>，注意这里不是<code>dfs(i+2)</code>，因为可以重复选择同一个数，回溯后复原现场；如果不选第i个数，则直接<code>dfs(i+1)</code></li>
+<li>时间复杂度计算非常复杂，这里简单写为O(S)，S为所有可行解的长度之和。空间复杂度为<code>target</code>，路径数组和栈空间最大开销都为<code>target</code></li>
+</ul>
+</li>
+<li><strong>22.括号生成</strong><ul>
+<li>对于每个位置，都有选择’(‘和’)’两种可能。但是不能将每个位置都填为左括号，或每个位置都是右括号，需要对填入括号的情况进行限制。<code>dfs(int i, int open)</code>其中<code>i</code>表示括号生成的第i个位置，<code>open</code>表示左括号的个数，用来进行填入括号的限制。<ul>
+<li>终止条件：<code>m=2*n</code>，当<code>i==m</code>时，表示<code>path</code>已经填满，加入结果中</li>
+<li>左括号的限制：当<code>open&lt;n</code>时，可以填入左括号，进入i+1位置的填写<code>dfs(i+1,open+1)</code></li>
+<li>右括号的限制：当<code>open-i&lt;open</code>时，表示当前右括号的数量<code>open-i</code>小于左括号的数量<code>open</code>，可以填入右括号，进入i+1位置的填写<code>dfs(i+1,open)</code></li>
+</ul>
+</li>
+<li>时间复杂度计算比较复杂，为$O(\frac{4^n}{\sqrt{n}})$。空间复杂度为O(n)，即<code>path</code>与递归栈的开销</li>
+</ul>
+</li>
+<li><strong>79.单词搜索</strong><ul>
+<li>回溯。需要遍历每个位置，以每个位置为起始位置进入回溯对单词从头开始进行匹配。<ul>
+<li>回溯函数参数：<code>auto dfs = [&amp;](this auto&amp;&amp; dfs, int x, int y, int i) {/* ··· */}</code>，x和y表示当前位置，i表示当前匹配到<code>word</code>的第<code>i</code>个字母</li>
+<li>终止条件：不能像之前当<code>i==word.size()</code>再返回，因为这里是维护了visited数组，当没有访问过该位置，才会进入下一层递归，这在边界条件：<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">board =</span><br><span class="line">[[<span class="string">"a"</span>]]</span><br><span class="line">word =</span><br><span class="line"><span class="string">"a"</span></span><br></pre></td></tr></tbody></table></figure>
+这种情况下，无法递归到终止条件的那层，因为只有一个元素，且该元素已被访问。因此终止条件需要在判断当前位置是否匹配第<code>i</code>个字母后立刻判断：<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (board[x][y] != word[i])</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (i == word.<span class="built_in">size</span>() - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></tbody></table></figure></li>
+<li>之后再往上下左右四个方向延伸递归，当<code>0 &lt;= x_ &amp;&amp; x_ &lt; n &amp;&amp; 0 &lt;= y_ &amp;&amp; y_ &lt; m &amp;&amp; !visited[x_][y_]</code>时递归下一层</li>
+</ul>
+</li>
+<li>时间复杂度上界为$O(MN3^L)$，其中M为<code>broad</code>的长，N为<code>broad</code>的宽，L为<code>word</code>的长度。因为除了起始位置最多可以向4个方向延伸，其他位置最多向3个方向延伸，因此每次从头匹配最多是$3^L$复杂度，我们对每个位置都要进行从头匹配，因此总的时间复杂度为$O(MN3^L)$。但实际的时间复杂度远远小于该数量级，因为递归过程中存在剪枝处理。空间复杂度由于<code>visited</code>数组的开销，为O(MN)</li>
+</ul>
+</li>
+<li><strong>131.分割回文串</strong><ul>
+<li>方法一：从每个位置切与不切出发。每个位置有两个选择，作为当前子串的结尾，或者不作为当前子串的结尾。（注意当<code>i==n-1</code>是必须作为当前子串的结尾）<ul>
+<li>回溯函数：<code>auto dfs = [&amp;](this auto&amp;&amp; dfs, int i, int start) {/* ··· */}</code>，其中i表示处于s的第i位，start表示当前子串的起始位置</li>
+<li>终止条件：<code>i == n</code>，复制结果并返回</li>
+<li>函数体：两个选择，（1）当<code>i &lt; n - 1</code>时，不切，<code>dfs(i + 1, start);</code>；（2）当<code>(isPalindrome(s, start, i)</code>当前子串已经是回文串时，可以选择切，将字串加入path，<code>dfs(i + 1, i + 1);</code>，回溯后恢复现场</li>
+</ul>
+</li>
+<li>方法二：从每个子串的结束位置出发，遍历所有可能的结束位置。<ul>
+<li>回溯函数：<code>auto dfs = [&amp;](this auto&amp;&amp; dfs, int i) {/* ··· */}</code>，其中i表示处于子串起始位置为s的第i位</li>
+<li>终止条件：同方法一</li>
+<li>函数体：对于子串终止位置k在范围i~n-1做遍历，当<code>isPalindrome(s, i, k)</code>，将子串复制到path，进行递归<code>dfs(k+1)</code>（下一个子串的起始位置为k+1），回溯后恢复现场</li>
+</ul>
+</li>
+<li>时间复杂度都为$O(n2^n)$，因为每个位置都有2个选择（切与不切），因此时间复杂度为$O(2^n)$，每个叶节点会对结果进行复制，时间复杂度为O(n)，因此总时间复杂度为$O(n2^n)$。空间复杂度为O(n)，包括path数组和栈空间的开销</li>
+</ul>
+</li>
+<li><strong>51.N皇后</strong><ul>
+<li>回溯。对每行每个可能摆放的位置进行遍历，判断摆放位置是否与之前摆放的皇后位置冲突（不同行、不同列、不同斜对角线），如果不冲突即进入下一个递归（即下一个皇后的摆放），否则遍历下一个可能摆放位置</li>
+<li><strong>如何O(1)时间复杂度判断当前皇后摆放位置是否与之前摆放的皇后位置冲突（不同行、不同列、不同斜对角线）？</strong><ul>
+<li>由于我们是按照不同行去摆放皇后，因此行必定不冲突，不用判断</li>
+<li>记录每个列的状态（是否已经摆放皇后）</li>
+<li>对于<strong>同一斜向左上的对角线，行号减列号是相等的</strong>，因此可以维护一个数组记录每个斜向左上的对角线是否已经存在皇后，大小为2<em>n，<em>*索引为r-c+n-1</em></em>，这样最左下的行号减列号为-(n-1),则索引刚好为0</li>
+<li>对于<strong>同一斜向右上的对角线，行号加列好是相等的</strong>，因此可以维护一个数组记录每个斜向右上的对角线是否已经存在皇后，大小为2*n</li>
+</ul>
+</li>
+<li>时间复杂度上界为$O(n^2n!)$，实际上远小于此数量级。N皇后的摆放方式有n!种，每次将结果复制到res种需要$O(n^2)$，因此总的为$O(n^2n!)$。空间复杂度为$O(n^2)$，主要为path数组的开销<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1></li>
+</ul>
+</li>
+<li><strong>35.搜索插入位置</strong><ul>
+<li>二分+迭代。使用左闭右开区间，不断对比<code>nums[mid]</code>与<code>target</code>的值，更新区间范围，当<code>left==right</code>时，找到答案。注意这里当<code>nums[mid]==target</code>时并不直接返回<code>mid</code>，因为<code>mid</code>可能不是第一个出现该值的位置</li>
+<li>时间复杂度为O(logn)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>74.搜索二维矩阵</strong><ul>
+<li>解题方法可以转换为<font color="3fb1fd">35.搜索插入位置</font>的二分查找（但略有差别，35是返回插入位置，本题是返回是否存在数字）。将搜索二维矩阵逻辑上转换为一维升序矩阵，直接使用普通的二分搜索方法解决问题</li>
+<li>时间复杂度为O(logmn)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>34.在排序数组中查找元素的第一个和最后一个位置</strong><ul>
+<li>二分+左闭右开区间。可以直接使用<font color="3fb1fd">35.搜索插入位置</font>的二分查找，用来查找<strong>元素的第一个位置（即第一个大于等于target的位置）</strong>。根据返回值进行检查，看排序数组中是否存在target，如果不存在，返回{-1,-1}，如果存在，则继续寻找<strong>元素在排序数组中的最后一个位置（即排序数组中第一个大于target的位置）</strong>。这里不需要再写一个新函数，可以直接复用二分查找函数：<code>int upper = lower_bound(nums, target + 1) - 1;</code>，因为此时target必在排序数组中，查找排序数组中第一个大于target + 1的位置-1即为排序数组中第一个大于target的位置</li>
+<li>时间复杂度为O(logn)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>33.搜索旋转排序数组</strong><ul>
+<li>二分+左闭右闭区间。由于二分查找需要在有序数组中查找，而旋转排序数组虽然整体不是有序数组，但是二分后左右至少有一个是有序的，在二分后有序的数组中查找，若target在该有序部分中，对该有序部分不断二分找到目标值；若target不在有序部分中，则肯定在另一个存在旋转节点的部分，对该部分进行二分，又可以得到至少一个有序部分，以此类推得到结果</li>
+<li>时间复杂度为O(logn)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>153. 寻找旋转排序数组中的最小值</strong><ul>
+<li>二分+左闭右闭区间。将<code>nums[mid]</code>与<code>nums[right]</code>比较，如果大于，则最小值必在[mid+1,right]区间；如果小于，则最小值在[left,mid]区间。由于循环条件为<code>left&lt;right</code>，因此不存在等于的情况。</li>
+<li>时间复杂度为O(logn)，空间复杂度为O(1)</li>
+<li><strong>思考题1</strong>：为什么不将<code>nums[mid]</code>与<code>nums[left]</code>比较？因为当<code>nums[mid]&gt;nums[left]</code>，最小值可能在右边区间，也有可能就在left位置上，无法划分具体位置。</li>
+<li><strong>思考题2</strong>：如果求最大值呢？求最大值有两种方法：<ul>
+<li>方法一：使用本题的方法求出最小值，则最大值的位置就是(最小值的位置-1)%n</li>
+<li>方法二：将<code>nums[mid]</code>与<code>nums[left]</code>比较，如果大于，则最大值在[mid,right]区间；如果小于，则最大值在[left,mid-1]区间。如果将<code>nums[mid]</code>与<code>nums[right]</code>比较，在小于的情况，最大值可能在右边（right位置），也可能在左边，无法确定。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>4.寻找两个正序数组的中位数</strong><ul>
+<li>更详细的思路可以见灵神题解：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/median-of-two-sorted-arrays/solutions/2950686/tu-jie-xun-xu-jian-jin-cong-shuang-zhi-z-p2gd/?envType=study-plan-v2&amp;envId=top-100-liked">https://leetcode.cn/problems/median-of-two-sorted-arrays/solutions/2950686/tu-jie-xun-xu-jian-jin-cong-shuang-zhi-z-p2gd/?envType=study-plan-v2&amp;envId=top-100-liked</a></li>
+<li>可以将题目理解为：将两个数组中的元素划分为两部分，a部分是所有元素中较小的元素，b部分是所有元素中较大的元素。m为第一个数组的长度，n为第二个数组的长度。当m+n为偶数时，中位数为a中最大值与b中最小值的平均；当为奇数时，允许a部分元素比b部分元素多一个，则中位数为a中最大值。</li>
+<li>方法一：双指针法。（不满足题目复杂度要求）取长度更小的数组为nums1，在两个数组头部和尾部分别加上哨兵节点避免越界访问（并且保证交点的存在）。由于哨兵节点的存在，i为nums1的指针，表示nums1有i个元素在a部分，j为nums2的指针，表示nums2有j个元素在a部分。<ul>
+<li>初始化<code>i=0，j=(m+n+1)/2</code>，即a部分都由nums2中的元素组成。后续不断<code>i++,j--</code>，直到遇到<code>nums1[i]&lt;nums2[j+1] &amp;&amp; nums1[i+1]&gt;nums2[j]</code>，表示找到交点，确定nums1、nums2中a、b部分的组成个数</li>
+<li>时间复杂度为O(m+n)，由于对数组头部插入哨兵节点需要O(n)和O(m)的时间复杂度。空间复杂度为O(m+n)</li>
+</ul>
+</li>
+<li>方法二：二分方法。（满足甚至更优于题目要求的O(log(m+n))时间复杂度）该方法不需要插入哨兵节点，因此nums1中a部分的个数为i+1个，nums2中a部分的个数为j+1个，使用二分法找到<code>nums1[i]&lt;nums2[j+1] &amp;&amp; nums1[i+1]&gt;nums2[j]</code>的交点，此时j不再等于<code>(m+n+1)/2-i</code>，而是<code>(m+n+1)/2-2</code>(由于没有哨兵节点)。<ul>
+<li>注意：使用左闭右开区间寻找交点时，最后<code>i = left - 1</code>是最后一个满足<code>nums1[i] &lt;= nums2[j+1]</code>的位置。并且由于没有哨兵节点，计算结果时需要进行越界检查</li>
+<li>时间复杂度为O(logmin(m,n))，空间复杂度为O(1)<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>20.有效的括号</strong><ul>
+<li>遇到左括号，入栈（可以入栈左括号，或者入栈该左括号对应的右括号）；遇到右括号，查看栈顶（如果栈为空，返回false，如果栈顶不为对应的左括号/右括号，返回false）。遍历s结束后，返回栈是否为空（不为空表示有多余的左括号，也是false）</li>
+<li>时间复杂度为O(n)，空间复杂度为O(n)</li>
+</ul>
+</li>
+<li><strong>155.最小栈</strong><ul>
+<li>栈中存入的是pair二元组，first表示当前栈中最小值，second表示存入的值。由于测试用例没有超过int的范围，因此直接使用<code>stack&lt;int,int&gt; st</code>。当push进栈一个元素时，计算当前最小值为curMin=min(preMin,val)，preMin即为将当前数push进栈前栈顶二元组的first</li>
+<li>所有操作的时间复杂度为O(1)，空间复杂度为O(q)，q为push操作调用的次数</li>
+</ul>
+</li>
+<li><strong>394.字符串解码</strong><ul>
+<li>使用不定长数组vector模拟栈。在遍历s的过程中，会遇到下面三种情况：<ol>
+<li>字符是数字。注意存在连续多位都是数字的情况，将循环次数的完整字符串加入vector栈中</li>
+<li>字符是字母或左括号。将字符转化为string类型并入栈</li>
+<li>字符是右括号：对括号内需要循环的字符串进行处理：<ul>
+<li>首先不断出栈直到遇到左括号，出栈过程中非左括号的字符串加入sub数组</li>
+<li>此时sub数组中的字符串为倒序，翻转后按顺序拼接获得括号内需要循环的完整字符串内容</li>
+<li>左括号出栈，栈顶为需要循环的次数的字符串，转换为int类型并出栈，根据循环次数得到循环处理后的字符串内容</li>
+<li>本次括号内容处理完毕，将循环处理后的字符串入栈</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>最后的返回值是vector栈中拼接的字符串，vector栈中在”ac2[b]”的情况下，遍历完s后栈中是{“a”,”c”,”bb”}，需要拼接成完整字符串才能得到正确结果</li>
+</ul>
+</li>
+<li>时间复杂度为O(n+L)，其中n为s的长度，L为解码后字符串的长度。算法需要对s进行遍历，时间为O(n)，在遇到右括号时，需要重复循环构造解码后的循环部分，每次重复 k 次子串 c，时间为 O(k⋅∣c∣),循环处理总的时间复杂度为O(L)，因此总时间复杂度为O(n+L)。空间复杂度为O(n)，即栈的最大开销</li>
+</ul>
+</li>
+<li><strong>739.每日温度</strong><ul>
+<li>单调栈。两种方法：<ul>
+<li>从右到左遍历，栈底到栈顶依次递减。如果栈为空，直接将当前下标入栈；如果非空，判断当前下标的温度是否小于栈顶下标温度，如果小于，说明找到当前下标的答案，更新当前下标答案为st.top()-i，并将当前下标入栈，如果不小于，则不断弹出小于等于当前下标温度的栈顶，直到栈为空或栈顶大于当前下标温度（此时要更新答案），再将当前下标入栈。下标在栈中表示这些下标是可能成为答案的候选者</li>
+<li>从左到右遍历，栈底到栈顶依次递减。如果栈为空，直接将当前下标入栈；如果非空，判断当前下标的温度与栈顶温度的大小，如果大于，则更新栈顶下标的答案为i-st.top(),弹出栈顶，不断循环判断，直到当前下标的温度不大于栈顶温度或栈为空，当前下标入栈。下标在栈中表示该下标还没找到下一个高于其温度的天数，相当于一个todo列表</li>
+</ul>
+</li>
+<li>时间复杂度为O(n)，需要对数组进行遍历，空间复杂度为O(n)，单调栈的开销</li>
+</ul>
+</li>
+<li><strong>84.柱状图中最大的矩形</strong><ul>
+<li>单调栈。基于<font color="3fb1fd">739.每日温度</font>的两种方法，本题遍历每个矩形可能的高度计算最大矩形，确定高度后，确定该高度左右两侧最近的小于该高度的位置，就能计算出矩形的宽，从而求出矩形的面积。下面介绍如何将算法从三次遍历优化到一次遍历：<ul>
+<li><strong>三次遍历</strong>：第一次遍历获得所有节点的左边最近的小于节点高度的位置（即矩形左边界），左边不存在小于节点高度的位置，则左边界为-1，所有节点的左边界记录在left数组中。第二次遍历获得所有节点的右边最近的小于节点高度的位置（即矩形右边界），右边不存在小于节点高度的位置，则左边界为n，所有节点的右边界记录在right数组中。第三次遍历，遍历每个节点，根据<code>height[i]*(right[i]-left[i]-1)</code>计算每个高度的最大矩形面积，最终求得最大面积</li>
+<li><strong>二次遍历</strong>：由<font color="3fb1fd">739.每日温度</font>的两种方法可知，求左边界和右边界，既可以从左到右遍历，也可以从右到左遍历，那么求每个高度左右边界的两次遍历可以合并成一次。从左到右遍历，当当前高度小于栈顶高度，说明当前位置是栈顶位置的右边界，更新right数组，入栈时，当前栈顶位置是当前高度的左边界，更新left数组，即栈中元素表示还在寻找右边界的todo列表且为左边界候选者。最后再次进行一次遍历计算面积</li>
+<li><strong>一次遍历</strong>：三次遍历和二次遍历都需要维护left和right数组记录每个高度的左右边界，一次遍历可以省略掉left和right数组。仍然使用单调栈，从左到右遍历，当当前高度小于栈顶高度，说明当前位置是栈顶位置的右边界right，而栈顶位置高度的左边界，就是栈顶的前一个元素，记录<code>h=height[st.top()]</code>再将栈顶弹出后，此时的栈顶就是之前栈顶位置的左边界left，计算面积更新结果<code>ans = max(ans, h * (right - left - 1))</code>。只需要一次遍历即可</li>
+</ul>
+</li>
+<li>时间复杂度都为O(n)，上面不管是几次遍历，每次求边界的遍历每个节点入栈出栈一次，因此每个遍历都是O(n)时间复杂度，三次遍历为O(3n)时间复杂度，二次遍历为O(2n)，一次遍历为O(n)，因此三个方法时间复杂度都为O(n)。空间复杂度也都为O(n)，单调栈的开销<h1 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h1></li>
+</ul>
+</li>
+<li><strong>215.数组中的第K个最大元素</strong><ul>
+<li>使用<strong>快速选择</strong>。基于双路快排实现，快排的时间复杂度为O(nlogn)，不满足题目O(n)的要求。但是由于题目只需要找到第K大的元素，因此不需要将整个数组排序。选择一个基准值进行一遍双路快排后，如果基准值的位置在n-k处，说明该基准值就是数组中的第K个最大元素，返回结果；如果位置大于n-k，说明第K个最大元素比当前基准值小，在小于当前基准值的范围中继续快速选择递归寻找；如果小于n-k，则在大于当前基准值的范围中继续快速选择递归寻找<ul>
+<li><strong>双路快排</strong>：选择最左端元素nums[l]为基准值，指针i=l+1，j=r，（注意这里的l和r是左闭右闭区间）i先移动，当遇到小于基准值的数，i继续前进，遇到大于等于基准值的数，i停止前进。j进行移动，遇到小于等于基准值的数，j停止移动，否则继续前进。判断是否<code>i&gt;=j</code>，如果是则跳出循环，否则交换i、j所指的元素，i、j各自前进一步，继续循环。当跳出循环，存在两种情况：<code>i==j</code>或者<code>i&gt;j</code>，等于的情况往往是等于基准值，不太影响；大于的情况，i指向的是大于等于基准值区间的第一个值，j指向的是小于等于i区间的最后一个值，因此退出循环后，需要将j位置上的值与基准值交换，才能保证交换后基准值左侧都是小于等于基准值的数，右侧都是大于等于基准值的数</li>
+</ul>
+</li>
+<li>平均期望的时间复杂度为O(n)，空间复杂度为O(logn)，递归栈的开销</li>
+</ul>
+</li>
+<li><strong>374.前K个高频元素</strong><ul>
+<li>哈希表+优先队列。遍历一遍统计每个元素出现的次数以构造哈希表。使用大小为k的小根堆优先队列，当优先队列中元素不足k时，将[num, count]放入队列，队列中按照出现次数的升序排列。当优先队列元素达到k个，取堆顶比较当前元素出现次数是否大于堆顶，大于则优先队列pop，当前元素放入队列。最后遍历优先队列输出结果。<ul>
+<li>时间复杂度为O(nlogk)，第一次遍历构造哈希表为O(n)，第二次遍历n个元素，由于优先队列大小为k，每次调整为O(logk)，因此第二次遍历时间复杂度为O(nlogk)，第三次遍历输出结果为O(k)，总时间复杂度为O(nlogk)。空间复杂度为O(n)，哈希表开销为O(n)，优先队列开销为O(k)</li>
+</ul>
+</li>
+<li>哈希表+桶排序。遍历一遍统计每个元素出现的次数以构造哈希表。使用buckets数组将出现次数相同的元素放在同一个桶中，buckets的下标表示元素出现的次数。逆序遍历buckets，将出现次数大的优先放入结果中，每放入一个元素<code>k--</code>，知道<code>k==0</code>返回结果。<ul>
+<li>时间复杂度为O(n)，空间复杂度为O(n)</li>
+<li>PS.注意buckets的size为<code>nums.size()+1</code>，因为会存在整个数组只有一个元素的情况，该元素的出现次数就是<code>nums.size()</code>，在<code>buckets[nums.size()]</code>处。后续遍历buckets时也要从<code>nums.size()</code>下标开始遍历</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>295.数据流的中位数</strong><ul>
+<li>大根堆+小根堆。题目需要插入元素效率高且便于查询最大/小值的数据结构，选择堆。使用大根堆pqMin存储较小那一半的整数，使用小根堆pqMax存储较大那一半的整数。当数据个数为奇数时，规定大根堆pqMin比小根堆pqMax元素多1，此时中位数即pqMin的堆顶；当数据个数为偶数时，大根堆pqMin与小根堆pqMax元素个数相等，此时中位数为pqMin堆顶与pqMax堆顶的平均数</li>
+<li>时间复杂度<code>addNum</code>为O(logn)，<code>findMedian</code>为O(n)。空间复杂度为O(n)<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1></li>
+</ul>
+</li>
+<li><strong>121.买卖股票的最佳时期</strong><ul>
+<li>用<code>minPrice</code>维护第i天之前股票最低价格，初始化为<code>prices[0]</code>。从<code>i=1</code>遍历数组，不断更新答案与最小买入价格（注意要先更新答案，再更新买入价格，因为必须要在不同天买入卖出）</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>55.跳跃游戏</strong><ul>
+<li>使用<code>end</code>维护当前可以到达位置的最远位置，遍历数组的同时不断更新。当<code>end</code>到达数组最后一个元素甚至更远时返回<code>true</code>，当遍历i超出<code>end</code>范围说明位置<code>i</code>无法到达，不能跳跃到终点</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>45.跳跃游戏II</strong><ul>
+<li>记录当前可到达的右边界<code>cur_right</code>，遍历数组（注意终止条件是<code>i &lt; nums.size() - 1</code>，因为题目保证可达，当<code>i==nums.size()-2</code>时，若<code>i!=cur_right</code>，说明不需要搭桥跳跃，当<code>i==cur_right</code>时，需要搭桥跳跃且必可达，不用再查看<code>nums.size()-1</code>处的情况）当<code>i==cur_right</code>时，需要重新搭桥，<code>ans++</code>跳跃一次并更新当前可达右边界。遍历完返回结果<code>ans</code></li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>763.划分字母区间</strong><ul>
+<li>题目可以转化为区间合并。使用<code>last[26]</code>维护每个字母在字符串s中最后出现的下标，每个字母都有一个区间可以包括其出现的所有位置，题目需要划分出最多的可以单独完全涵盖这些区间的结果，即所有字母区间的最多合并区间。主要流程是遍历s，在遍历过程中不断根据<code>last[s[i]-'a']</code>更新右边界<code>end</code>，当<code>i==end</code>时，表示一个可以单独拆分的合并区间完成，将长度加入结果中并更新新区间起始位置。以此类推遍历完得到结果</li>
+<li>时间复杂度为O(n)，两次遍历，一次构造<code>last[26]</code>数组，一次计算结果。空间复杂度为$O(|\Sigma|)$，其中$|\Sigma|$是字符集的长度，本题中s仅由小写字母组成，因此$|\Sigma|$为26<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1></li>
+</ul>
+</li>
+<li><strong>70.爬楼梯</strong><ul>
+<li>使用一维规模为n+1的dp数组。dp状态转移方程为:<code>dp[i]=dp[i-1]+dp[i-2]</code>。初始值<code>dp[0]=dp[1]=1</code></li>
+<li>时间复杂度为O(n)，空间复杂度为O(n)，由于状态转移方程公式只与前2个值有关，可以只使用2个变量，从而将空间复杂度优化为O(1)</li>
+</ul>
+</li>
+<li><strong>118.杨辉三角</strong><ul>
+<li>我的题解使用的是一维规模为numRows的dp数组，dp状态转移方程为：<code>dp[i] = i - 1 &gt;= 0 ? dp[i] + dp[i - 1] : dp[i]</code>，初始值为<code>dp[0] = 1</code></li>
+<li>时间复杂度为O($numRows^2$)，空间复杂度为O(numRows)，如果之间使用返回值数组做状态转移方程的计算，由于返回值不计入空间复杂度，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>198.打家劫舍</strong><ul>
+<li>dp状态转移方程为<code>dp[i]=max(dp[i-2]+nums[i],dp[i-1])</code>。由于<code>dp[i]</code>只与<code>dp[i-1]</code>和<code>dp[i-2]</code>有关，因此可以简化为2个变量<code>f1</code>和<code>f0</code>，优化空间。初始值<code>f1=0,f0=0</code></li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>279.完全平方数</strong><ul>
+<li>完全背包问题。用<code>i</code>表示第i个完全平方数，第i个完全平方数的值为i*i。对于一个数n，可能组成它的最大完全平方数为第$\left \lfloor \sqrt{n} \right \rfloor$个完全平方数。因此最后的结果是<code>dp[(int)sqrt(n)][n]</code>。<ul>
+<li><strong>dp状态转移方程</strong>：对于每个完全平方数，有选和不选两种情况，如果选择，注意本题可以不限次数地选择同一个数。因此状态转移方程为：<br><img src="/picture/friend_404.gif" data-original="完全平方数状态转移方程.png" alt="完全平方数状态转移方程.png"><ul>
+<li>其中<code>dp[i][j-i*i]</code>表示选择第i个完全平方数，由于第i个完全平方数是可以重复选择的，因此这里是<code>dp[i][j-i*i]</code>而不是<code>dp[i-1][j-i*i]</code></li>
+<li><code>dp[i-1][j]</code>表示不选择第i个完全平方数。当<code>j&gt;=i*i</code>时，在选与不选中取最小值；否则由于当前和的目标值<code>j</code>小于第i个完全平方数，只能不选</li>
+</ul>
+</li>
+<li><strong>初始值的设置</strong>：dp[0]行除<code>dp[0][0]=0</code>，其他<code>dp[0][j]</code>都为<code>INT_MAX</code>，作为无效值避免干扰计算</li>
+</ul>
+</li>
+<li>时间复杂度为O($\sqrt{n}n$)。空间复杂度由于dp[i]行只与dp[i-1]行有关，因此可以空间优化为一维滚动数组，优化前时间复杂度为O($\sqrt{n}n$)，优化后为O(n)</li>
+</ul>
+</li>
+<li><strong>322.零钱兑换</strong><ul>
+<li>类似<font color="3fb1fd">279.完全平方数</font>，硬币也是能无限重复取的。dp状态转移方程为：<ul>
+<li>当<code>coins[i]&gt;j</code>，<code>dp[i+1][j]=dp[i][j]</code>，只能不选</li>
+<li>否则取<code>min(dp[i][j], dp[i+1][j-coins[i]]+1)</code>，在选与不选中取最小值</li>
+</ul>
+</li>
+<li>初始化值dp[0]行除了<code>dp[0][0]</code>其余都为<code>INT_MAX/2</code>，因为这里要<code>dp[i+1][j-coins[i]]+1</code>，如果初始化值为<code>INT_MAX</code>，在+1时会溢出</li>
+<li>时间复杂度为$O(n<em>amount)$，空间复杂度为$O(n</em>amount)$.也可以使用上题一样的优化方法将空间优化为一维滚动数组，则空间复杂度为O(amount)</li>
+</ul>
+</li>
+<li><p><strong>139.单词拆分</strong></p>
+<ul>
+<li>和前面的0-1背包以及完全背包问题都不同。0-1背包每个元素只能取一次，这题字典中的字符串可以重复取；完全背包问题是每个元素可以重复取，但是是重复取某个元素后就再也不取该元素，本题字典中的字符串可以交叉出现组成s，因此也无法套用完全背包问题模板</li>
+<li><p>本题使用i表示s的[0,i)左闭右开范围的子串，dp[i]表示s的[0,i)左闭右开范围的子串能否由字典中的字符串组成。对i进行遍历，对每个i，寻找[i-1,i),[i-2,i),…,[max(i-max_len,0),i)是否能分割成字典中的字符串且剩下的部分也能被字典组成。即：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// i表示左闭右开区间[0,i)的s的子串是否能由wordDict中的字符串分段构成</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n + <span class="number">1</span>; i++) {</span><br><span class="line">        <span class="comment">// 表示尝试将s[j,i)看成一个单词</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="built_in">max</span>(i - max_len, <span class="number">0</span>); j--) {</span><br><span class="line">            <span class="keyword">if</span> (words.<span class="built_in">count</span>(s.<span class="built_in">substr</span>(j, i - j)) &amp;&amp; dp[j]) {</span><br><span class="line">                dp[i] = <span class="literal">true</span>;</span><br><span class="line">                <span class="comment">// 为什么可以 break？</span></span><br><span class="line">                <span class="comment">// 因为我们一旦找到了一个合法的拆分方式，就可以确认为f[i] =</span></span><br><span class="line">                <span class="comment">// true，不需要再去检查其它的j。</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>初始化:<code>dp[0]=true</code>，对于空字符串，默认可以由字典组成</p>
+</li>
+<li>为了加快确认子串是否能由字典中的单词组成，使用哈希表提高查找单词的效率</li>
+<li>时间复杂度为$O(mL+nL^2)$。其中，m为字典的长度，L为字典中最长字符串的长度，n为s的长度。构造哈希表需要O(mL)时间复杂度，使用i遍历s的每个长度的子串，需要遍历n次，每次需要遍历j分割子串看能否由字典单词组成，遍历j需要遍历L次，判断[j,i)范围的子串能否由字典单词组成（即使用哈希表）需要O(L)的时间复杂度，因此最后动态规划的时间复杂度为$O(nL^2)$，总时间复杂度为$O(mL+nL^2)$。空间复杂度为O(mL+n)，哈希表的开销为O(mL)，dp数组的开销为O(n)</li>
+</ul>
+</li>
+<li><strong>300.最长递增子序列</strong><ul>
+<li>使用i表示以<code>nums[i]</code>为递增子序列最后一个元素，dp[i]表示以<code>nums[i]</code>为最后一个元素的递增子序列的最大长度。初始化dp[0]=1。遍历所有<code>j&lt;i</code>，当<code>nums[j]&lt;nums[i]</code>，则状态转移方程为<code>dp[i]=max(dp[i],dp[j]+1)</code></li>
+<li>PS.注意dp[i]表示以<code>nums[i]</code>为最后一个元素的递增子序列的最大长度。因此这里dp数组的size为n而不是n+1。另外，由于最长递增子序列的最后一个元素不一定是<code>nums[n-1]</code>，因此dp过程中需要用<code>ans</code>记录最大长度，最后返回<code>ans</code>而不是<code>dp[n-1]</code></li>
+<li>时间复杂度为$O(n^2)$，空间复杂度为O(n)</li>
+</ul>
+</li>
+<li><strong>152.乘积最大子数组</strong><ul>
+<li>与<font color="3fb1fd">53.最大子数组和</font>类似但状态转移方程因为乘法而有所差别。本题要考虑到两个负数相乘为正数最大值的特殊情况，遇到负数不能简单截断。使用两个数组f_min和f_max维护每个下标i位置的最小连续乘积和最大连续乘积，更新两个数组的过程中不断更新ans。初始值<code>f_max[0]=f_min[0]=nums[0]</code>。状态转移方程为：<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = nums[i];</span><br><span class="line">f_max[i] = <span class="built_in">max</span>({f_max[i - <span class="number">1</span>] * x, f_min[i - <span class="number">1</span>] * x, x});</span><br><span class="line">f_min[i] = <span class="built_in">min</span>({f_min[i - <span class="number">1</span>] * x, f_max[i - <span class="number">1</span>] * x, x});</span><br></pre></td></tr></tbody></table></figure></li>
+<li>由上面状态转移方程可知，<code>f_max[i]</code>只与<code>f_max[i-1]</code>有关，因此<code>f_max</code>数组可以优化为<code>f_max</code>变量。<code>f_min</code>同理。</li>
+<li>时间复杂度为O(n)，空间复杂度优化前为O(n)，优化后为O(1)</li>
+</ul>
+</li>
+<li><strong>416.分割等和子集</strong><ul>
+<li>本题不能使用前缀和，因为划分成两个和相等的子集，子集中的元素可以是不连续的，前缀和子集元素必须是连续的。由于本题是子集，每个元素有选与不选两种情况，选至多只能选一次，因此是0-1背包问题，使用0-1背包问题解法</li>
+<li>首先计算数组中所有元素和s。使用<code>dp[i][j]</code>表示左开右闭[0,i)区间是否能分割出和为j的子集。则最终求得的答案是<code>dp[n][s/2]</code>，表示[0,n)区间即整个数组是否能分割出和为所有元素总和s的一半和m的子集，如果能分割出，那本题就能分割等和子集，得到答案。初始值dp[0]行除dp[0][0]为true（表示空区间能分割出和为0的等和子集）其余都为false。状态转移方程为:<ul>
+<li>当<code>j &gt;= nums[i - 1]</code>，<code>dp[i][j] = dp[i-1][j] || dp[i-1][j - nums[i - 1]]</code>，对应不选或选两种状态</li>
+<li>否则只能不选，<code>dp[i][j] = dp[i-1][j]</code></li>
+</ul>
+</li>
+<li>PS.在dp前可以判断<code>s%2</code>是否为0，如果不为0，必然不能分割成两个等和子集，可以提前返回，用作剪枝</li>
+<li>时间复杂度为O(nm)，其中n为nums数组的大小，m为所有元素和s的一半。空间复杂度为O(nm)，但是从状态转移方程可知，dp[i]行的状态只与dp[i-1]行的状态有关，因此可以将dp数组优化为一维滚动数组，空间复杂度为O(m)</li>
+</ul>
+</li>
+<li><strong>32.最长有效括号</strong><ul>
+<li>本题不能直接使用前面栈部分<font color="3fb1fd">20.有效的括号</font>的方法，<font color="3fb1fd">20.有效的括号</font>是判断整个字符串是否是有效括号，本题是判断字符串中最大有小括号子串的长度，由于会出现”())()”这种两个有效括号中间有无效括号、”)(()()))()”这种两端有无效括号且局部看”())”无效但是整体看”(()())”为最长有效括号的情况，无法延用20题的情况</li>
+<li><strong>方法一：动态规划</strong>。<code>dp[i]</code>表示最后一个元素为s[i]的最长有效括号子串长度。<ul>
+<li>初始化：dp[0]=0，当<code>s[i]=='('</code>，dp[i]=0</li>
+<li>状态转移方程：当<code>s[i]==')'</code>，最后一个元素为s[i]的最长连续有效括号子串有两种情况：<ul>
+<li>（1）<code>s[i-1]=='('</code>，则s[i-1]与s[i]可以组成一个有效的括号，再加dp[i-2]，即接上之前连续最长有效括号：<code>dp[i]=dp[i-2]+2</code></li>
+<li>（2）<code>s[i-1]！='('</code>，但<code>s[i-dp[i-1]-1]=='('</code>，即<code>s[i-dp[i-1]-1]+dp[i-1]代表的子串+s[i]</code>仍然可以组成连续有效括号子串，再加上dp[i-dp[i-1]-2]，即接上匹配到的左括号前的连续有效子串，此时<code>dp[i]=dp[i-1]+dp[i-dp[i-1]-2]+2</code></li>
+</ul>
+</li>
+<li>PS.最终序列中的最长连续有效括号子串不一定是以最后一个元素为子串末尾的，因此需要用ans记录最长有效括号子串的长度，返回ans而不是dp[n-1]</li>
+<li>时间复杂度为O(n)，空间复杂度为O(n)，dp数组的开销</li>
+</ul>
+</li>
+<li><strong>方法二：栈</strong>。用栈顶记录最近的未匹配的右括号的下标位置，这样就能计算有效括号子串的长度，而不是单个匹配括号之间的差，如”()()”。由于最初栈为空，当”()()”情况，第一个左括号下标入栈，栈底是左括号下标，而不是<strong>最近的未匹配的右括号的下标位置</strong>，因此预先在栈底插入-1，以保持栈底是最近的未匹配的右括号的下标位置的状态。遍历s，（1）遇到左括号，将下标入栈，（2）遇到右括号，当栈顶下标对应的是左括号，弹出左括号匹配后通过<code>i-st.top()</code>计算当前连续有效括号子串的长度；当栈顶下标对应的是右括号或-1，无左括号可匹配，弹出栈顶后将当前右括号下标push入栈，维护栈底为最近的未匹配的右括号的下标位置<ul>
+<li>时间复杂度为O(n)，空间复杂度为O(n)，栈的开销</li>
+</ul>
+</li>
+<li><strong>方法三：贪心算法</strong>。使用<code>left</code>记录左括号的个数，<code>right</code>记录右括号的个数。先从左到右遍历s，遇到左括号<code>left++</code>，遇到右括号<code>right++</code>，当<code>left==right</code>时，表示此时找到了连续有效括号，记录答案；当<code>left&lt;right</code>时，右括号比左括号多，此时该子串往右继续遍历必然无法再形成有效括号子串，因此将<code>left=right=0</code>，重新开始计算连续有效括号子串。但是从左到右遍历对于”((())”这种情况，无法找到最右边的”(())”，因为左括号始终比右括号多。因此还需要从右到左遍历一遍s，与之前不同的是，当<code>left&gt;right</code>时，左括号比右括号多，此时该子串往左继续遍历必然无法再形成有效括号子串，因此将<code>left=right=0</code>，重新开始计算连续有效括号子串，其余都一样。这种情况就能弥补第一次遍历缺漏的情况。<ul>
+<li>时间复杂度为O(n)，空间复杂度为O(1)<h1 id="多维动态规划"><a href="#多维动态规划" class="headerlink" title="多维动态规划"></a>多维动态规划</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>62.不同路径</strong><ul>
+<li>多维dp。由于只能向下或向右行走，因此第一行的路径只有1个，即一直向右走，dp[0]行可初始化为1。第一列也只有1种走法。其余位置状态转移方程为:<code>dp[i][j]=dp[i-1][j]+dp[i][j-1]</code></li>
+<li>时间复杂度为O(nm)，空间复杂度为O(nm)，由于dp[i]行只与dp[i]和dp[i-1]行有关，因此可以优化为一维滚动数组，由于dp[i][j]的值依赖dp[i][j-1]的值进行计算，因此j需要递增遍历，优化后空间复杂度为O(m)</li>
+</ul>
+</li>
+<li><strong>64.最小路径和</strong><ul>
+<li>多维dp。由于只能向下或向右行走，走到(i,j)位置的最短路径和dp[i][j]由dp[i-1][j]和dp[i][j-1]决定。状态转移方程为：<code>dp[i][j]=min(dp[i-1][j],dp[i][j-1])+grid[i][j]</code>。</li>
+<li>时间复杂度为O(mn)，空间复杂度为O(mn)，由于dp[i][j]的计算只与dp[i-1][j]和dp[i][j-1]有关，因此可以优化为一维滚动数组，空间复杂度为O(m)，甚至还能进一步优化，在grid上原地修改，相当于grid为dp数组，这样空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>5.最长回文子串</strong><ul>
+<li><strong>方法一：多维dp</strong>。<code>dp[i][j]</code>表示子串[i,j]（左闭右闭区间）是否是回文子串。<ul>
+<li>初始化：当<code>j==i</code>时，子串只有一个字母，此时必然为回文串，因此当<code>j==i</code>时，<code>dp[i][j]=true</code>；当<code>j==i+1</code>时，此时子串由两个字母组成，如果<code>s[i]==s[j]</code>，则子串为回文串，因此当<code>j==i+1</code>时，<code>dp[i][j]=(s[i]==s[j])</code></li>
+<li>状态转移方程：<code>dp[i][j]=(s[i]==s[j]) &amp;&amp; dp[i+1][j-1]</code></li>
+<li>PS.注意将子串的长度从2-n遍历</li>
+<li>时间复杂度为O($n^2$)，空间复杂度为O($n^2$)</li>
+</ul>
+</li>
+<li><strong>方法二：中心扩展算法</strong>。中心扩展算法遍历每一个元素，将这些元素看作回文子串的中心，往两端扩展（即不断对比两端的字母），扩展到最大长度，返回范围。需要注意扩展也有两种情况，一是从第i个字母向两边同时扩展，一是从第i和i+1个字母同时向两边扩展。最后记录最大范围，返回剪切子串结果<ul>
+<li>时间复杂度为O($n^2$)，遍历回文串中心需要O(n)，从中心扩展需要O(n)，因此总时间复杂度为O($n^2$)。空间复杂度为O(1)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>1143.最长公共子序列</strong><ul>
+<li>dp[i][j]表示text1的[0,i-1]子串与text2的[0,j-1]子串的最长公共子序列长度。初始化：当<code>i==0</code>或<code>j==0</code>时，<code>dp[i][j]=0</code>，相当于一个子串与一个空字符串求最长公共子序列长度，值为0。状态转移方程：<ul>
+<li>当<code>text1[i-1]==text1[j-1]</code>，<code>dp[i][j]=dp[i-1][j-1]+1</code>，此时text1的第i个字符与text2的第j个字符匹配，放入公共子序列中，因此进一步求text1的[0,i-1]子串与text2的[0,j-1]子串的最长公共子序列长度就行</li>
+<li>当<code>text1[i-1]!=text1[j-1]</code>，<code>dp[i][j]=max(dp[i-1][j],dp[i][j-1])</code>,如果它们不相等，不能将这两个字符都包括在公共子序列中，那么就有两种选择：<ol>
+<li>不考虑 text1[i-1]，即往上看：dp[i-1][j]</li>
+<li>不考虑 text2[j-1]，即往左看：dp[i][j-1]<br>无法确定哪种更优（即哪种能带来更长的子序列），因此需要从这两个状态中取一个最大值</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>时间复杂度为O(mn)，其中m为text1的大小，n为text2的大小。空间复杂度为O(mn)，由于dp[i]行只与dp[i-1]行有关，可以优化为一维滚动数组，注意dp[i][j]的计算依赖于dp[i][j-1]，因此要先计算出dp[i][j-1]再计算出dp[i][j]，因此j是增序遍历，同时注意dp[i-1][j-1]会在遍历中被覆盖，因此需要有一个变量记录dp[i-1][j-1]以支持<code>text1[i]==text1[j]</code>时的状态转移方程计算，此时空间复杂度优化为O(n)</li>
+</ul>
+</li>
+<li><strong>72.编辑距离</strong><ul>
+<li>dp[i][j]表示将word1的[0,i-1]子串变为word2的[0,j-1]子串需要的操作步骤。初始化：当<code>i==0</code>时，<code>dp[i][j]=j</code>，可以理解为要把空字符串变为word2的[0,j-1]子串，需要插入j次；当<code>j==0</code>时，<code>dp[i][j]=i</code>，可以理解为要把word1的[0,i-1]子串变为空字符串，需要删除i次。状态转移方程：<ul>
+<li>当<code>word1[i-1]==word2[j-1]</code>时，word1[i-1]不需要做任何更改，因此<code>dp[i][j]=dp[i-1][j-1]</code></li>
+<li>当<code>word1[i-1]！=word2[j-1]</code>时，word1[i-1]需要进行更改（插入、删除、替换），更改次数为<code>dp[i][j]=min({dp[i-1][j],dp[i][j-1],dp[i-1][j-1]})+1</code>。其中：<ul>
+<li><code>dp[i-1][j]</code>表示删除，将<code>word1[i-1]</code>删除后，只需要看将word1的[0,i-2]子串变为word2的[0,j-1]子串需要的操作步骤</li>
+<li><code>dp[i][j-1]</code>表示插入，在<code>word1[i-1]</code>后插入word2[j-1]后，只需要看将word1的[0,i-1]子串变为word2的[0,j-2]子串需要的操作步骤</li>
+<li><code>dp[i-1][j-1]</code>表示替换，将<code>word1[i-1]</code>替换word2[j-1]后，只需要看将word1的[0,i-2]子串变为word2的[0,j-2]子串需要的操作步骤</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>时间复杂度为O(mn)，其中m为word1的大小，n为word2的大小。空间复杂度为O(mn)。由于dp[i]行只与dp[i-1]行相关，因此可以将dp数组优化为一维滚动数组，同前一题一样，需要预先存<code>dp[i-1][j-1]</code>的值，因为在遍历过程中会被覆盖，优化后空间复杂度为O(n)<h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1></li>
+</ul>
+</li>
+<li><strong>136.只出现一次的数字</strong><ul>
+<li>使用异或$\oplus$。异或是当两个bit不同时为true，相同时为false。异或满足交换律和结合律，且$a\oplus a=0$，$a\oplus 0=a$。因此将所有数都进行异或，因为数组中的数组不是出现一次就是两次，对于出现两次的数，进行异或后就消除了，因此最终相当于是$0\oplus 0\oplus … \oplus 0\oplus n=n$，n即为只出现一次的数字</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>169.多数元素</strong><ul>
+<li>使用Boyer-Moore算法。具体流程：<ol>
+<li>初始化candidate为任意值，count表示candidate的个数，初始化为0</li>
+<li>当<code>count==0</code>时，candidate赋值为当前遍历到的值x</li>
+<li>当<code>candidate==x</code>时，<code>count++</code>；否则，<code>count--</code></li>
+<li>继续遍历，返回第二步</li>
+<li>遍历完成后，candidate的值就是数组中的众数</li>
+</ol>
+</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>75.颜色分类</strong><ul>
+<li>基于三路快排算法的思想进行修改。这里基准值为1，使用lt、gt指针维护小于1区域的后一个位置（即等于1区域的第一个位置）和大于1区域的前一个位置（即等于1区域的最后一个位置）。将数组分为三部分：0-即小于1的区域[0,lt-1]；1-等于1的区域[lt,gt]；2-大于1的区域[gt+1,n-1]。主要流程为：<ul>
+<li>初始化<code>lt=0,i=0,gt=n-1</code></li>
+<li>遍历数组，当<code>i&gt;gt</code>时表示遍历完毕</li>
+<li>当<code>i&gt;1</code>时，交换<code>nums[i]</code>和<code>nums[gt]</code>，<code>gt--</code>，注意此时不能<code>i++</code>，因为现在i指向的是之前gt指向的值，这个值还没有进行比较，需要再次比较；当<code>i&lt;1</code>时，交换<code>nums[i]</code>和<code>nums[lt]</code>，再<code>i++;lt++</code>；否则，<code>i++</code>，i继续前进</li>
+<li>回到步骤2，直到遍历结束</li>
+<li>排序完成</li>
+</ul>
+</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>31.下一个排列</strong><ul>
+<li>本题主要在于数学思维。找到一个排列的下一个排列，流程如下：<ol>
+<li>从右到左找到第一个小于右侧相邻元素的数x。此时x右侧的序列为递减序列</li>
+<li>在x右侧的序列中，从右到左找到第一个大于x的数y。y必然存在，因为x小于右侧相邻元素，因此y最大为x右侧相邻元素。</li>
+<li>交换x与y。此时y右侧的序列仍然是递减序列。若原本是<code>{x,...,c,y,a}</code>，y是从右到左第一个大于x的数，则<code>a&lt;x&lt;y&lt;c</code>，x与y交换后，变为<code>{y,...,c,x,a}</code>，可知y右侧仍然是递减序列</li>
+<li>将y右侧序列变为最小排序。由于y右侧为递减序列，因此将y右侧序列翻转即可</li>
+</ol>
+</li>
+<li>时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+</li>
+<li><strong>287.寻找重复数</strong><ul>
+<li><strong>方法一：标记法</strong>。PS.该方法不满足题目要求的不修改nums数组，但是满足空间复杂度为O(1)。遍历nums数组，将nums[i]对应的下标修改为相反数，由于有两个数相同且nums[i]在[1,n]区间，当nums[i]的绝对值对应的下标小于0（即已被标记过）,说明nums[i]的绝对值为重复数。时间复杂度为O(n)，空间复杂度为O(1)，需要修改nums数组</li>
+<li><strong>方法二：快慢指针</strong>。将i-&gt;nums[i]构造一个边，如果没有重复值，每个nums[i]只有一个i对应指向，整个数组相当于一个链表结构，i的后一个节点是nums[i]。由于存在重复值，那么nums[i]一定有两个不同的i，j指向nums[i]，即存在多对一的关系，说明链表中存在环。本题就转化为了前面的<font color="3fb1fd">142.环形链表II</font>，方法也类似。时间复杂度为O(n)，空间复杂度为O(1)，不需要修改数组nums，完美符合题目要求</li>
+</ul>
+</li>
+</ul>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><a class="post-meta__tags" href="/tags/leetcode/">leetcode</a><a class="post-meta__tags" href="/tags/leetcode-hot-100/">leetcode hot 100</a></div><div class="post-share"><div class="social-share" data-image="/img/OIP.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/05/30/%E6%B1%82N%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" title="求N个数的最小公倍数"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-30</div><div class="info-item-2">求N个数的最小公倍数</div></div><div class="info-2"><div class="info-item-1">2个数的最小公倍数为(a*b)/gcd(a,b)<br>
+N个数的最小公倍数如何计算?<br>
+</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/picture/friend_404.gif" data-original="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Augenstin</div><div class="author-info-description">不要温和地走进那个良夜</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" href="/about/"><i class="far fa-circle-user"></i><span>About me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/cooooo966" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/augenstin@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #24292e;"></i></a><a class="social-icon" href="/augenstin_08725" target="_blank" title="Discord"><i class="fab fa-discord" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">欢迎来到我的博客！<br>
+博客正在建设中...<strong>ꉂ ･ ･ ☆</strong>
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%88%E5%B8%8C"><span class="toc-number">1.</span> <span class="toc-text">哈希</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-number">2.</span> <span class="toc-text">双指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="toc-number">3.</span> <span class="toc-text">滑动窗口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%90%E4%B8%B2"><span class="toc-number">4.</span> <span class="toc-text">子串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E6%95%B0%E7%BB%84"><span class="toc-number">5.</span> <span class="toc-text">普通数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5"><span class="toc-number">6.</span> <span class="toc-text">矩阵</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8"><span class="toc-number">7.</span> <span class="toc-text">链表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">8.</span> <span class="toc-text">二叉树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E8%AE%BA"><span class="toc-number">9.</span> <span class="toc-text">图论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9E%E6%BA%AF"><span class="toc-number">10.</span> <span class="toc-text">回溯</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="toc-number">11.</span> <span class="toc-text">二分查找</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88"><span class="toc-number">12.</span> <span class="toc-text">栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A0%86"><span class="toc-number">13.</span> <span class="toc-text">堆</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="toc-number">14.</span> <span class="toc-text">贪心算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-number">15.</span> <span class="toc-text">动态规划</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-number">16.</span> <span class="toc-text">多维动态规划</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%80%E5%B7%A7"><span class="toc-number">17.</span> <span class="toc-text">技巧</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/11/leetcode-hot-100%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" title="leetcode hot 100刷题总结">leetcode hot 100刷题总结</a><time datetime="2025-06-11T11:08:19.000Z" title="Created 2025-06-11 19:08:19">2025-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/06/%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%9A%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E4%BA%8C%E7%BB%B4%E5%B9%B3%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%82%B9%E8%83%BD%E5%90%A6%E7%BB%84%E6%88%90%E6%AD%A3%E6%96%B9%E5%BD%A2/" title="算法题：判断一个二维平面上的四个点能否组成正方形">算法题：判断一个二维平面上的四个点能否组成正方形</a><time datetime="2025-06-05T17:07:00.000Z" title="Created 2025-06-06 01:07:00">2025-06-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/06/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%9A%E9%9A%8F%E6%9C%BA%E5%8C%96%E5%BF%AB%E6%8E%92%E3%80%81%E5%8F%8C%E8%B7%AF%E5%BF%AB%E6%8E%92%E5%92%8C%E4%B8%89%E8%B7%AF%E5%BF%AB%E6%8E%92/" title="快速排序：随机化快排、双路快排和三路快排">快速排序：随机化快排、双路快排和三路快排</a><time datetime="2025-06-05T17:05:37.000Z" title="Created 2025-06-06 01:05:37">2025-06-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/05/%E5%A4%A7%E6%A0%B9%E5%A0%86%E3%80%81%E5%B0%8F%E6%A0%B9%E5%A0%86%E4%B8%8E%E5%A0%86%E6%8E%92%E5%BA%8F/" title="大根堆、小根堆与堆排序">大根堆、小根堆与堆排序</a><time datetime="2025-06-05T14:27:27.000Z" title="Created 2025-06-05 22:27:27">2025-06-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/30/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" title="设计模式-简单工厂模式">设计模式-简单工厂模式</a><time datetime="2025-05-30T08:23:08.000Z" title="Created 2025-05-30 16:23:08">2025-05-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Augenstin</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>
